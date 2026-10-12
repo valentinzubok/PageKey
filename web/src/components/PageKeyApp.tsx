@@ -445,7 +445,11 @@ export function PageKeyApp() {
                 <strong>{String(e.event)}</strong>{" "}
                 <span className="muted">
                   {[
-                    e.result ? RESULT[String(e.result)] || e.result : null,
+                    e.event === "Claimed"
+                      ? "the page says so"
+                      : e.result
+                        ? RESULT[String(e.result)] || e.result
+                        : null,
                     e.by ? short(String(e.by)) : null,
                     e.status,
                     String(e.url || "").replace(/^https:\/\//, "").slice(0, 60),
