@@ -89,7 +89,7 @@ is recorded in either direction.
 |---|---|
 | Console | **https://valentinzubok.github.io/PageKey/** (reads work with no wallet) |
 | Network | GenLayer Studio Dev / Studio Next — chain `61997` |
-| Contract | [`0x909151ae02909e88a2D03c73591e90a0DA0AF95d`](https://explorer-studio-dev.genlayer.com/address/0x909151ae02909e88a2D03c73591e90a0DA0AF95d) |
+| Contract | [`0xb5F562154eF5c8c6a22De84E2e32645E8c0aAe4F`](https://explorer-studio-dev.genlayer.com/address/0xb5F562154eF5c8c6a22De84E2e32645E8c0aAe4F) |
 | Contract-only repo | [PageKeyCore](https://github.com/valentinzubok/PageKeyCore) |
 | Deploy record | [`STUDIO_DEV_DEPLOY.md`](STUDIO_DEV_DEPLOY.md) — every transaction of the demo, including the refused ones |
 
@@ -106,6 +106,13 @@ is recorded in either direction.
   is "under new management" and states another's.
 - [`web/public/fixtures/thread.html`](web/public/fixtures/thread.html) — a forum post where a
   token appears only in a visitor's comment.
+
+## Lint
+
+`sh scripts/lint_current_sdk.sh` runs the official GenVM linter (`genvm-lint lint`, `check` and
+`typecheck`) and CI runs it on every push. Refusals raise `gl.vm.UserError`; every method of the
+contract class takes `self`. Why the full SDK check runs on a header-swapped copy is explained in
+[`STUDIO_DEV_DEPLOY.md`](STUDIO_DEV_DEPLOY.md#lint).
 
 ## The console
 
@@ -125,7 +132,7 @@ npm run dev      # http://localhost:3019
 
 ```bash
 pip install -r requirements-dev.txt
-python3 -m pytest -q      # 58 tests
+python3 -m pytest -q      # 59 tests
 ```
 
 [`tests/test_pagekey.py`](tests/test_pagekey.py), by what it proves:

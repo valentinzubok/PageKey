@@ -1,6 +1,6 @@
 /** Live PageKey deploy on GenLayer Studio Dev (chain 61997). Override via env. */
 export const CONTRACT_ADDRESS = (process.env.NEXT_PUBLIC_PAGEKEY_ADDRESS ||
-  "0x909151ae02909e88a2D03c73591e90a0DA0AF95d") as `0x${string}`;
+  "0xb5F562154eF5c8c6a22De84E2e32645E8c0aAe4F") as `0x${string}`;
 
 /** Studio Dev / Studio Next — chain ID 61997. */
 export const CHAIN_ID = 61997;
